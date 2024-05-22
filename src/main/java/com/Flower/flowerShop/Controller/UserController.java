@@ -45,10 +45,10 @@ public class UserController {
 
     @GetMapping("/join")
     public String joinUser(){return "/join"; }
-/*
 
-    @PostMapping("/join")
-    public String joinHome(){return"join";}
-*/
+
+    @GetMapping("/signup")
+    public String joinHome(){return"/signup";}
+
 
 }
