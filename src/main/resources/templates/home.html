@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
+    <style>
+        /* CSS 스타일은 여기에 추가하세요 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .navigation {
+            background-color: #e9ecef;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .upload-section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Flower Shop</h1>
+    </header>
+
+    <div class="navigation">
+        <!-- 내비게이션 내용을 추가하세요 -->
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/productCheck">Products</a></li>
+                <li><a href="/join">join Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <main>
+        <div><a th:href="@{/join}">회원가입</a></div>
+        <div><a th:href="@{/login}">로그인</a></div>
+    </main>
+
+    <footer>
+        <!-- 푸터 내용을 추가하세요 -->
+    </footer>
+</div>
+
+</body>
+</html>
