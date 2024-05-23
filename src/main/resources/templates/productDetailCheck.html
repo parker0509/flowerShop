@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+</head>
+<body>
+<h1>Product Details</h1>
+
+<h2>제품 이름: <span th:text="${productName}">제품 이름을 불러오는 중...</span></h2>
+<h2>제품 가격: <span th:text="${productPrice}">제품 가격을 불러오는 중...</span></h2>
+<h2>제품 ID: <span th:text="${productId}">제품 ID를 불러오는 중...</span></h2>
+<p th:text="${productDetails}"></p> <!-- 오류 메시지 표시 -->
+
+</body>
+</html>

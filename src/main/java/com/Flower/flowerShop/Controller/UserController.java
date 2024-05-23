@@ -46,7 +46,6 @@ public class UserController {
     @GetMapping("/join")
     public String joinUser(){return "/join"; }
 
-
     @GetMapping("/signup")
     public String joinHome(){return"/signup";}
 

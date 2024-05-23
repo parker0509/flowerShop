@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 목록</title>
+</head>
+<body>
+<h1>상품 목록</h1>
+
+<ul>
+    <!--
+        th:each는 Thymeleaf의 반복문 태그 속성입니다.
+        'products'는 컨트롤러에서 모델에 추가된 리스트로, 이를 통해 각 'product' 객체를 순회합니다.
+    -->
+    <li th:each="product : ${products}">
+        <!--
+            th:href는 Thymeleaf의 URL 링크를 설정하는 태그 속성입니다.
+            '/productDetailCheck' URL에 현재 'product' 객체의 'id'를 쿼리 파라미터로 추가합니다.
+            @{}는 URL을 렌더링하는 Thymeleaf 문법입니다.
+        -->
+        <a th:href="@{/productDetailCheck(productId=${product.id})}"
+           th:text="${product.productName}"></a>
+        <!--
+            th:text는 Thymeleaf의 텍스트 렌더링 태그 속성입니다.
+            현재 'product' 객체의 'productName' 속성값을 앵커 태그의 텍스트로 설정합니다.
+        -->
+        - 가격:
+        <span th:text="${product.productPrice}"></span>
+        <!--
+            현재 'product' 객체의 'productPrice' 속성값을 span 태그의 텍스트로 설정합니다.
+        -->
+        <br>
+
+        <br>
+        <img th:src="@{${product.imageUrl}}" alt="상품 이미지" style="max-width: 200px; max-height: 200px;">
+
+        <!--
+           th:src는 Thymeleaf의 속성으로 이미지 URL을 설정합니다.
+           현재 'product' 객체의 'imageUrl' 속성값을 img 태그의 src 속성에 설정합니다.
+           alt 속성은 이미지가 로드되지 않을 경우 표시될 텍스트를 정의합니다.
+           style 속성을 사용하여 이미지의 최대 너비와 높이를 설정합니다.
+       -->
+    </li>
+</ul>
+
+</body>
+</html>
