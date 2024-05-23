@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.antlr.v4.runtime.misc.NotNull;
 
 @Getter
 @Setter
@@ -20,5 +21,8 @@ public class Product {
 
     private String productName;
     private int productPrice;
+
+    private String imageName;
+    private String imageUrl;
 
 }
