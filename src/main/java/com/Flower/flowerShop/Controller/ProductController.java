@@ -38,6 +38,8 @@ public class ProductController {
         return "upload_Product_form";
     }
 
+
+    // 파일 저장
     @PostMapping("/saveProduct")
     public String saveProduct(Product product, @RequestParam("imageFile") MultipartFile imageFile) throws Exception {
         if (!imageFile.isEmpty()) {
@@ -84,6 +86,9 @@ public class ProductController {
          e.printStackTrace();
          return "redirect:/uploadProductForm?error";
      }*/
+
+
+    //읽기
     @PostMapping("/readProduct")
     public String readProduct(Product product) {
         productRepository.findAll();
