@@ -3,32 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flower Shop</title>
+    <title>Life Style Frame</title>
     <style>
-        /* CSS 스타일은 여기에 추가하세요 */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
+            color: #333333;
         }
         .container {
-            max-width: 960px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
-        h1 {
-            color: #007bff;
+        header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            color: #111111;
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header-right a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #111111;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .header-right a:hover {
+            color: #f15a24;
         }
         .navigation {
-            background-color: #e9ecef;
-            padding: 10px;
+            background-color: #ffffff;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e5e5;
             margin-bottom: 20px;
         }
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        .navigation ul li {
+            margin: 0 15px;
+        }
+        .navigation ul li a {
+            text-decoration: none;
+            color: #111111;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .navigation ul li a:hover {
+            color: #f15a24;
+        }
+        .banner {
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: #ffffff;
+            text-align: center;
+        }
+        .banner h2 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+        }
+        .banner p {
+            font-size: 24px;
+            margin: 10px 0 0;
+        }
+        main {
+            text-align: center;
+            margin: 20px 0;
+        }
+        main a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #111111;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        main a:hover {
+            background-color: #f15a24;
+            transform: translateY(-2px);
+        }
         .upload-section {
-            background-color: #ffffff;
+            background-color: #f9f9f9;
             padding: 20px;
             margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111111;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
@@ -36,29 +127,36 @@
 
 <div class="container">
     <header>
-        <h1> Shopping mall</h1>
+        <h1>Frame</h1>
+        <div class="header-right">
+            <a href="/join">Join</a>
+            <a href="/login">Login</a>
+        </div>
     </header>
 
     <div class="navigation">
-        <!-- 내비게이션 내용을 추가하세요 -->
         <nav>
             <ul>
                 <li><a href="/index">Home</a></li>
                 <li><a href="/productCheck">Products</a></li>
-                <li><a href="/join">join Us</a></li>
+                <li><a href="/join">Join Us</a></li>
                 <li><a href="/productDetailCheck">Contact</a></li>
             </ul>
         </nav>
     </div>
 
+    <div class="banner">
+        <h2>Welcome to Our Frame</h2>
+        <p>Find the best Frame for my loved ones and me</p>
+    </div>
 
     <main>
-        <div><a th:href="@{/join}">회원가입</a></div>
-        <div><a th:href="@{/login}">로그인</a></div>
+        <div><a th:href="@{/join}">Join Now</a></div>
+        <div><a th:href="@{/login}">Login</a></div>
     </main>
 
     <footer>
-        <!-- 푸터 내용을 추가하세요 -->
+        <p>&copy; 2024 Frame. All rights reserved.</p>
     </footer>
 </div>
 
