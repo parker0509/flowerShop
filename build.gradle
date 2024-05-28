@@ -25,11 +25,19 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security' // Spring Security 의존성 추가
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5' // JWT 의존성 추가
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5' // JWT 구현 의존성 추가
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5' // Jackson 기반 JWT 파싱 의존성 추가
 	compileOnly 'org.projectlombok:lombok'
 	implementation 'mysql:mysql-connector-java:8.0.28' // MySQL Connector/J 의존성 추가
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'jakarta.validation:jakarta.validation-api:3.0.2' //vaildateion api 추가 05.28
+	implementation 'io.springfox:springfox-boot-starter:3.0.0' // swagger 추가 05.28
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
 }
 
 tasks.named('test') {
