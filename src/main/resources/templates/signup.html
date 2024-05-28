@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>회원 가입</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-
+<h1>회원 가입</h1>
+<form th:action="@{/signup}" th:object="${memberRequestDto}" method="post">
+    <div>
+        <label for="nickname">닉네임:</label>
+        <input type="text" id="nickname" th:field="*{nickname}" />
+        <span th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}"></span>
+    </div>
+    <div>
+        <label for="memberEmail">이메일:</label>
+        <input type="email" id="memberEmail" th:field="*{memberEmail}" />
+        <span th:if="${#fields.hasErrors('memberEmail')}" th:errors="*{memberEmail}"></span>
+    </div>
+    <div>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" th:field="*{password}" />
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+    </div>
+    <div>
+        <label for="accountType">계정 유형:</label>
+        <input type="text" id="accountType" th:field="*{accountType}" />
+        <span th:if="${#fields.hasErrors('accountType')}" th:errors="*{accountType}"></span>
+    </div>
+    <div>
+        <button type="submit">회원 가입</button>
+    </div>
+</form>
 </body>
 </html>
