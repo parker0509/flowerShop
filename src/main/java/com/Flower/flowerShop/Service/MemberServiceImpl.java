@@ -19,6 +19,8 @@ public class MemberServiceImpl implements MemberService{
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -26,6 +28,7 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public Long join(UserRequestDto userRequestDto) {
+
         User user = new User();
         user.setNickname(userRequestDto.getNickname());
         user.setMemberEmail(userRequestDto.getMemberEmail());

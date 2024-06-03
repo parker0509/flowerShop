@@ -35,11 +35,33 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-             .authorizeRequests((authz) -> authz
+                .authorizeHttpRequests((authz) -> authz
                 .requestMatchers("/").permitAll()
-                .requestMatchers("/index").authenticated()
+                    .requestMatchers("/contact").permitAll()
+                    .requestMatchers("/join").permitAll()
+                    .requestMatchers("/signup").permitAll()
+                    .requestMatchers("/signup-success").permitAll()
+
+
+                    .requestMatchers("/index").authenticated()
+
                 .anyRequest().authenticated()
              );
+
+
+        /*
+       ## 스프링 버젼을 높은것을 쓴다면
+       ## Override -> Bean등록으로 변경
+       ## authorizeRequests() -> authorizeHttpRequests()
+       ## antMatchers() -> requestMatchers()
+       ## access() -> hasAnyRole()
+       ## http.build()를 꼭 반환해 줘야함
+        */
+
+
+        http .csrf(cors -> cors.disable())
+             .cors(cors -> cors.disable());
+
         return http.build();
     }
 

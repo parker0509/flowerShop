@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
+  <meta charset="UTF-8">
   <title>회원 가입 성공</title>
-  <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
 <h1>회원 가입 성공</h1>
-<p>회원 가입이 성공적으로 완료되었습니다. 회원 ID: <span th:text="${memberId}"></span></p>
-<a th:href="@{/signup}">다시 가입하기</a>
+<p>회원 가입이 성공적으로 완료되었습니다!</p>
+<a th:href="@{/login}">로그인 하러 가기</a>
 </body>
 </html>

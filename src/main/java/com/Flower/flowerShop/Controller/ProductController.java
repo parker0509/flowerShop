@@ -24,7 +24,9 @@ import java.util.UUID;
 public class ProductController {
 
     //@ 필수 애노테이션의 쓰임과 사용 방법 그리고 외우기
+
     private final ProductRepository productRepository;
+
     private final ProductService productService;
 
     @Autowired

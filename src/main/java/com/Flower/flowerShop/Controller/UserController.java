@@ -5,6 +5,7 @@ import com.Flower.flowerShop.DTO.UserRequestDto;
 import com.Flower.flowerShop.Service.MemberService;
 import jakarta.validation.Valid;
 import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,7 +18,10 @@ import javax.xml.stream.events.Attribute;
 @Controller
 public class UserController {
 
+    @Autowired
     private MemberService memberService;
+
+    @Autowired
     private UserRepository userRepository;
 
     @GetMapping("/")
@@ -66,20 +70,37 @@ public class UserController {
         return "signup";
     }
 
+
     @PostMapping("/signup")
-    public String signup(@Valid @ModelAttribute("userRequestDto") UserRequestDto userRequestDto, BindingResult bindingResult, Model model) {
+    public String signup(@Valid @ModelAttribute("userRequestDto") UserRequestDto userRequestDto, BindingResult bindingResult) {
+
         if (bindingResult.hasErrors()){
             return "signup";
         }
 
-        Long memberId = memberService.join(userRequestDto);
-        model.addAttribute("memberId",memberId);
+   /*     Long memberId = memberService.join(userRequestDto);
+        model.addAttribute("memberId",memberId);*/
 
-        return "sign-success";
+        return "redirect:/signup-success";
     }
 
+    @GetMapping("/signup-success")
+    public String signupSuccess(){
+        return "signup-success";
+    }
+
+    /*@PostMapping("/signup")
+    public String signup(@ModelAttribute("memberRequestDto") UserRequestDto memberRequestDto) {
+        // 회원 가입 로직 수행
+        memberService.join(memberRequestDto);
+
+        // 회원 가입 성공 후 리다이렉트
+        return "redirect:/signup-success";
+    }*/
+
     @GetMapping("/login")
-    public String showloginForm(){
+    public String showloginForm() {
+
         return "login";
     }
 
